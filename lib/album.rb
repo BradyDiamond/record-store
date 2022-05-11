@@ -20,8 +20,9 @@ class Album
     @@albums.delete(self.id)
   end
 
-  def update(name, artist, year, genre)
+  def update(name, id, artist, year, genre)
     @name = name
+    @id = id || @@total_rows += 1
     @artist = artist
     @year = year
     @genre = genre
@@ -58,6 +59,10 @@ class Album
 
   def self.find(id)
     @@albums[id]
+  end
+
+  def songs
+    Song.find_by_album(self.id)
   end
 
   def self.search(name)

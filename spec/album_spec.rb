@@ -59,7 +59,7 @@ describe '#Album' do
   end
   describe('#delete') do
     it("deletes an album by id") do
-      album = Album.new("Giant Steps", nil, nil, nil, nil)
+      album = Album.new("Giant Steps", nil,nil, nil, nil)
       album.save()
       album2 = Album.new("Blue", nil, nil, nil, nil)
       album2.save()
